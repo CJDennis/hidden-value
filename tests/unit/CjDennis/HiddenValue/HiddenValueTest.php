@@ -28,4 +28,11 @@ class HiddenValueTest extends Unit {
     $example_class->save('foobar', $value);
     self::assertSame($value, $example_class->load('foobar'));
   }
+
+  public function testShouldRetrieveAnUnnamedSavedValue() {
+    $example_class = new ExampleClass();
+    $value = new stdClass();
+    $example_class->save_nameless($value);
+    self::assertSame($value, $example_class->load_nameless());
+  }
 }
