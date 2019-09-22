@@ -5,44 +5,40 @@ use stdClass;
 
 trait HiddenValue {
   protected function hidden_value($name = null, $value = null) {
-    static $keys = [];
-    static $values = [];
-    static $named_values = [];
+    static $data = [];
 
+    $keys = array_map(function ($item) {
+      return $item->key;
+    }, $data);
     $key = array_search($this, $keys, true);
+    if ($key === false) {
+      $item = new stdClass();
+      $item->key = $this;
+      $item->value = null;
+      $item->named_value = new stdClass();
+    }
+    else {
+      $item = $data[$key];
+    }
+
     if (func_num_args() < 2) {
-      if ($key !== false) {
-        if ($name === null) {
-          $value = $values[$key];
-        }
-        else {
-          $value = $named_values[$key]->$name;
-        }
+      if ($name === null) {
+        $value = $item->value;
+      }
+      else {
+        $value = $item->named_value->$name;
       }
     }
     else {
-      if ($key !== false) {
-        if ($name === null) {
-          $values[$key] = $value;
-        }
-        else {
-          $named_values[$key]->$name = $value;
-        }
+      if ($name === null) {
+        $item->value = $value;
       }
       else {
-        $keys[] = $this;
-        if ($name === null) {
-          $values[] = $value;
-          $named_values[] = new stdClass();
-        }
-        else {
-          $values[] = null;
-          $std_class = new stdClass();
-          $std_class->$name = $value;
-          $named_values[] = $std_class;
-        }
+        $item->named_value->$name = $value;
       }
+      $data[$key] = $item;
     }
+
     return $value;
   }
 }
