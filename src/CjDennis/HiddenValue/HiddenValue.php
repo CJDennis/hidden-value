@@ -16,6 +16,9 @@ trait HiddenValue {
       $item->key = $this;
       $item->value = null;
       $item->named_value = new stdClass();
+      if (func_num_args() >= 2) {
+        $data[] = $item;
+      }
     }
     else {
       $item = $data[$key];
@@ -36,7 +39,6 @@ trait HiddenValue {
       else {
         $item->named_value->$name = $value;
       }
-      $data[$key] = $item;
     }
 
     return $value;
