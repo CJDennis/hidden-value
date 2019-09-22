@@ -2,6 +2,7 @@
 namespace CjDennis\HiddenValue;
 
 use Codeception\Test\Unit;
+use stdClass;
 use UnitTester;
 
 class HiddenValueTest extends Unit {
@@ -19,5 +20,12 @@ class HiddenValueTest extends Unit {
   // tests
   public function testShouldUseTheHiddenValueTraitInTheExampleClass() {
     self::assertContains(HiddenValue::class, class_uses(ExampleClass::class));
+  }
+
+  public function testShouldRetrieveASavedValue() {
+    $example_class = new ExampleClass();
+    $value = new stdClass();
+    $example_class->save('foobar', $value);
+    self::assertSame($value, $example_class->load('foobar'));
   }
 }
