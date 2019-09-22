@@ -48,4 +48,21 @@ class HiddenValueTest extends Unit {
     self::assertSame($value, $example_class->load_nameless(), 'The correct nameless value was not retrieved');
     self::assertSame($value_2, $example_class->load('bar'), 'The correct value of $bar was not retrieved');
   }
+
+  public function testShouldStoreDifferentValuesForDifferentInstances() {
+    $example_class_1 = new ExampleClass();
+    $example_class_2 = new ExampleClass();
+    $value_1a = new stdClass();
+    $value_1b = new stdClass();
+    $value_2a = new stdClass();
+    $value_2b = new stdClass();
+    $example_class_1->save_nameless($value_1a);
+    $example_class_1->save('foo', $value_1b);
+    $example_class_2->save('bar', $value_2a);
+    $example_class_2->save_nameless($value_2b);
+    self::assertSame($value_1a, $example_class_1->load_nameless(), 'The correct nameless value for example 1 was not retrieved');
+    self::assertSame($value_1b, $example_class_1->load('foo'), 'The correct value of $foo for example 1 was not retrieved');
+    self::assertSame($value_2a, $example_class_2->load('bar'), 'The correct value of $bar for example 2 was not retrieved');
+    self::assertSame($value_2b, $example_class_2->load_nameless(), 'The correct nameless value for example 2 was not retrieved');
+  }
 }
