@@ -12,4 +12,13 @@ class ExampleClass {
     $value = $this->hidden_value($name);
     return $value;
   }
+
+  public function save_nameless($value) {
+    $this->hidden_value(null, $value);
+  }
+
+  public function load_nameless() {
+    $value = $this->hidden_value(null);
+    return $value;
+  }
 }
