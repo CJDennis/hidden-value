@@ -7,5 +7,8 @@
     "require": {},
     "autoload": {
         "psr-4": {"CjDennis\\HiddenValue\\": "src/CjDennis/HiddenValue/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"CjDennis\\HiddenValue\\": "tests/unit/CjDennis/HiddenValue/"}
     }
 }
