@@ -10,5 +10,8 @@
     },
     "autoload-dev": {
         "psr-4": {"CjDennis\\HiddenValue\\": "tests/unit/CjDennis/HiddenValue/"}
+    },
+    "require-dev": {
+        "codeception/codeception": "3.1.1"
     }
 }
