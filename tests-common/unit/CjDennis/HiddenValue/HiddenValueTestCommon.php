@@ -51,4 +51,21 @@ trait HiddenValueTestCommon {
     $this->assertSame($value_2a, $example_class_2->load('bar'), 'The correct value of $bar for example 2 was not retrieved');
     $this->assertSame($value_2b, $example_class_2->load_nameless(), 'The correct nameless value for example 2 was not retrieved');
   }
+
+  public function testShouldStoreDifferentValuesForExtendedClasses() {
+    $example_class = new ExampleClass();
+    $extended_example_class = new ExtendedExampleClass();
+    $value_1a = new stdClass();
+    $value_1b = new stdClass();
+    $value_2a = new stdClass();
+    $value_2b = new stdClass();
+    $example_class->save_nameless($value_1a);
+    $example_class->save('foo', $value_1b);
+    $extended_example_class->extended_save('foo', $value_2a);
+    $extended_example_class->extended_save_nameless($value_2b);
+    $this->assertSame($value_1a, $example_class->load_nameless(), 'The correct nameless value for example 1 was not retrieved');
+    $this->assertSame($value_1b, $example_class->load('foo'), 'The correct value of $foo for example 1 was not retrieved');
+    $this->assertSame($value_2a, $extended_example_class->extended_load('foo'), 'The correct value of $bar for example 2 was not retrieved');
+    $this->assertSame($value_2b, $extended_example_class->extended_load_nameless(), 'The correct nameless value for example 2 was not retrieved');
+  }
 }
