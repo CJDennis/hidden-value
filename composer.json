@@ -9,7 +9,7 @@
         "psr-4": {"CjDennis\\HiddenValue\\": "src/CjDennis/HiddenValue/"}
     },
     "autoload-dev": {
-        "psr-4": {"CjDennis\\HiddenValue\\": "tests/unit/CjDennis/HiddenValue/"}
+        "psr-4": {"CjDennis\\HiddenValue\\": "tests-common/unit/CjDennis/HiddenValue/"}
     },
     "require-dev": {
         "infection/infection": "0.14.1"
