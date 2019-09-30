@@ -6,7 +6,7 @@ php:
 install: composer update
 
 script:
-  - vendor/bin/codecept run unit --coverage-xml=coverage.xml
+  - vendor/bin/codecept run unit --coverage-xml=../../coverage.xml
   - vendor/bin/infection --min-covered-msi=90 --min-msi=90
 
 env:
