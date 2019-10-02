@@ -1,5 +1,5 @@
 <?php
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
 class ExampleParent {
   public $a = 1;

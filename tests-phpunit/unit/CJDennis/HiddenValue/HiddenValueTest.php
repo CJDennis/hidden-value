@@ -1,9 +1,9 @@
 <?php
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
 use PHPUnit\Framework\TestCase;
 
-/** @covers \CjDennis\HiddenValue\HiddenValue */
+/** @covers \CJDennis\HiddenValue\HiddenValue */
 class HiddenValueTest extends TestCase {
   protected function setUp(): void {
     $this->_before();

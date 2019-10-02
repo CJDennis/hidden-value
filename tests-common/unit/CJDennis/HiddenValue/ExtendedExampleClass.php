@@ -1,5 +1,5 @@
 <?php
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
 class ExtendedExampleClass extends ExampleClass {
   public function extended_save(string $name, $value) {

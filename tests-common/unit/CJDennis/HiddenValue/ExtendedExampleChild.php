@@ -1,13 +1,7 @@
 <?php
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
-class ExampleChild extends ExampleParent {
-  use HiddenValue;
-
-  public $a;
-  protected $b;
-  private $c;
-
+class ExtendedExampleChild extends ExampleChild {
   public function __construct() {
     /** @noinspection PhpUnhandledExceptionInspection */
     $this->adopt_parent(...func_get_args());

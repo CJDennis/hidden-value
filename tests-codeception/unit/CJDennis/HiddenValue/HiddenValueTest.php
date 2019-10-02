@@ -1,5 +1,5 @@
 <?php
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
 use Codeception\Test\Unit;
 use UnitTester;

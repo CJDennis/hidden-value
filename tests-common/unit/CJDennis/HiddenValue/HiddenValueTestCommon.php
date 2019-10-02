@@ -1,6 +1,6 @@
 <?php
 /** @noinspection PhpUnused */
-namespace CjDennis\HiddenValue;
+namespace CJDennis\HiddenValue;
 
 use DateTime;
 use stdClass;
