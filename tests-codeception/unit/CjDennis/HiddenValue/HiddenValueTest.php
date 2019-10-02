@@ -10,12 +10,5 @@ class HiddenValueTest extends Unit {
    */
   protected $tester;
 
-  protected function _before() {
-  }
-
-  protected function _after() {
-  }
-
-  // tests
   use HiddenValueTestCommon;
 }

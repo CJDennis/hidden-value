@@ -4,6 +4,13 @@ namespace CjDennis\HiddenValue;
 use stdClass;
 
 trait HiddenValueTestCommon {
+  protected function _before() {
+  }
+
+  protected function _after() {
+  }
+
+  // tests
   public function testShouldUseTheHiddenValueTraitInTheExampleClass() {
     $this->assertContains(HiddenValue::class, class_uses(ExampleClass::class));
   }
