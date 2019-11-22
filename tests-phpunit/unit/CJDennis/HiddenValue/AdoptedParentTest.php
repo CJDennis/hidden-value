@@ -3,7 +3,7 @@ namespace CJDennis\HiddenValue;
 
 use PHPUnit\Framework\TestCase;
 
-/** @covers \CJDennis\DateTime\AdoptedParent */
+/** @covers \CJDennis\HiddenValue\HiddenValue */
 class AdoptedParentTest extends TestCase {
   protected function setUp(): void {
     $this->_before();
