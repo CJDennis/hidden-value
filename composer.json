@@ -3,7 +3,7 @@
     "description": "Allows storing pseudo class properties as values that are not dumpable, serialisable, or accessible from child classes",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {},
     "autoload": {
         "psr-4": {"CJDennis\\HiddenValue\\": "src/CJDennis/HiddenValue/"}
